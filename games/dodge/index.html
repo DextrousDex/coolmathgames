@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dodge - Dex Arcade</title>
+    <link rel="stylesheet" href="../../styles.css" />
+  </head>
+  <body>
+    <header class="game-topbar">
+      <a class="back-link" href="../../">Back to arcade</a>
+      <h1>Dodge</h1>
+    </header>
+    <main class="game-shell">
+      <section class="game-panel">
+        <div class="score-row">
+          <span>Score: <span id="score">0</span></span>
+          <button id="restart" type="button">Restart</button>
+        </div>
+        <canvas id="game" width="400" height="400" aria-label="Dodge game board"></canvas>
+      </section>
+    </main>
+    <script src="./dodge.js"></script>
+  </body>
+</html>
