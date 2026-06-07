@@ -6,51 +6,135 @@
     <title>Dexter Arcade</title>
     <link rel="stylesheet" href="./styles.css" />
   </head>
-  <body>
-    <header class="site-header">
-      <div>
-        <p class="eyebrow">Browser games</p>
-        <h1>Dexter Arcade</h1>
+  <body class="home-page">
+    <div class="boot-screen" id="bootScreen" aria-hidden="true">
+      <div class="boot-mark">
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
-      <label class="search">
-        <span>Search</span>
-        <input id="gameSearch" type="search" placeholder="Find a game" autocomplete="off" />
-      </label>
+      <p>Dexter Arcade</p>
+      <div class="boot-bar"><span></span></div>
+    </div>
+
+    <div class="scene-grid" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand" href="./" aria-label="Dexter Arcade home">
+        <span class="brand-icon">DA</span>
+        <span>Dexter Arcade</span>
+      </a>
+      <nav class="quick-nav" aria-label="Quick links">
+        <a href="#featured">Featured</a>
+        <a href="#library">Library</a>
+      </nav>
     </header>
 
     <main>
-      <section class="games-grid" id="gamesGrid" aria-label="Games">
-        <a class="game-card" href="./games/2048/">
-          <span class="game-art game-2048-art"></span>
+      <section class="hero" aria-labelledby="pageTitle">
+        <div class="hero-copy">
+          <p class="eyebrow">Browser games</p>
+          <h1 id="pageTitle">Dexter Arcade</h1>
+          <p class="hero-text">A growing collection of instant-play web games with polished classics, open-source hits, and quick arcade sessions.</p>
+          <div class="hero-actions">
+            <a class="primary-action" href="./games/hextris/">Play Hextris</a>
+            <a class="secondary-action" href="#library">Browse games</a>
+          </div>
+        </div>
+        <div class="hero-stage" aria-hidden="true">
+          <div class="cabinet">
+            <div class="screen">
+              <span class="scanline"></span>
+              <span class="screen-title">LIVE</span>
+              <span class="screen-score">06 games</span>
+            </div>
+            <div class="controls"><span></span><span></span><span></span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="featured" id="featured" aria-label="Featured games">
+        <a class="featured-game" href="./games/2048/">
+          <span>Featured</span>
           <strong>2048</strong>
-          <small>Open-source number puzzle</small>
+          <small>Clean puzzle energy</small>
         </a>
-        <a class="game-card" href="./games/hextris/">
-          <span class="game-art hextris-art"></span>
+        <a class="featured-game" href="./games/hextris/">
+          <span>Speed run</span>
           <strong>Hextris</strong>
-          <small>Fast-paced arcade puzzle</small>
+          <small>Fast reactions, bright chaos</small>
         </a>
-        <a class="game-card" href="./games/astray/">
-          <span class="game-art astray-art"></span>
+        <a class="featured-game" href="./games/astray/">
+          <span>3D pick</span>
           <strong>Astray</strong>
-          <small>WebGL maze adventure</small>
-        </a>
-        <a class="game-card" href="./games/snake/">
-          <span class="game-art snake-art"></span>
-          <strong>Snake</strong>
-          <small>Classic score chase</small>
-        </a>
-        <a class="game-card" href="./games/click-rush/">
-          <span class="game-art click-art"></span>
-          <strong>Click Rush</strong>
-          <small>Beat the clock</small>
-        </a>
-        <a class="game-card" href="./games/dodge/">
-          <span class="game-art dodge-art"></span>
-          <strong>Dodge</strong>
-          <small>Survive the falling blocks</small>
+          <small>Lost inside a WebGL maze</small>
         </a>
       </section>
+
+      <section class="library-head" id="library" aria-label="Game library controls">
+        <div>
+          <p class="eyebrow">Library</p>
+          <h2>Pick a game</h2>
+        </div>
+        <label class="search">
+          <span>Search</span>
+          <input id="gameSearch" type="search" placeholder="Find a game" autocomplete="off" />
+        </label>
+      </section>
+
+      <section class="filter-row" aria-label="Game filters">
+        <button class="filter-chip is-active" type="button" data-filter="all">All</button>
+        <button class="filter-chip" type="button" data-filter="puzzle">Puzzle</button>
+        <button class="filter-chip" type="button" data-filter="arcade">Arcade</button>
+        <button class="filter-chip" type="button" data-filter="3d">3D</button>
+      </section>
+
+      <section class="games-grid" id="gamesGrid" aria-label="Games">
+        <a class="game-card premium-card" href="./games/2048/" data-tags="puzzle numbers classic" data-title="2048">
+          <span class="game-art game-2048-art"></span>
+          <span class="game-badge">Open source</span>
+          <strong>2048</strong>
+          <small>Slide numbers, chase the impossible tile.</small>
+          <span class="game-meta"><span>Puzzle</span><span>MIT</span></span>
+        </a>
+        <a class="game-card premium-card" href="./games/hextris/" data-tags="puzzle arcade fast" data-title="Hextris">
+          <span class="game-art hextris-art"></span>
+          <span class="game-badge hot">Hot</span>
+          <strong>Hextris</strong>
+          <small>Spin the hexagon before the colors stack up.</small>
+          <span class="game-meta"><span>Arcade</span><span>GPL</span></span>
+        </a>
+        <a class="game-card premium-card" href="./games/astray/" data-tags="3d puzzle maze webgl" data-title="Astray">
+          <span class="game-art astray-art"></span>
+          <span class="game-badge new">3D</span>
+          <strong>Astray</strong>
+          <small>A moody first-person maze built for the browser.</small>
+          <span class="game-meta"><span>WebGL</span><span>Unlicense</span></span>
+        </a>
+        <a class="game-card" href="./games/snake/" data-tags="arcade classic score" data-title="Snake">
+          <span class="game-art snake-art"></span>
+          <span class="game-badge">Classic</span>
+          <strong>Snake</strong>
+          <small>Grow longer, stay sharp, avoid the walls.</small>
+          <span class="game-meta"><span>Arcade</span><span>Local</span></span>
+        </a>
+        <a class="game-card" href="./games/click-rush/" data-tags="arcade aim reaction" data-title="Click Rush">
+          <span class="game-art click-art"></span>
+          <span class="game-badge">Quick</span>
+          <strong>Click Rush</strong>
+          <small>Hit as many targets as you can in 20 seconds.</small>
+          <span class="game-meta"><span>Reaction</span><span>Local</span></span>
+        </a>
+        <a class="game-card" href="./games/dodge/" data-tags="arcade survival reaction" data-title="Dodge">
+          <span class="game-art dodge-art"></span>
+          <span class="game-badge">Survival</span>
+          <strong>Dodge</strong>
+          <small>Move fast while blocks rain from above.</small>
+          <span class="game-meta"><span>Arcade</span><span>Local</span></span>
+        </a>
+      </section>
+
+      <p class="empty-state" id="emptyState" hidden>No games found.</p>
     </main>
 
     <script src="./site.js"></script>
