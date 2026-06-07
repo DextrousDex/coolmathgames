@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Loading - Dexter Arcade</title>
+    <link rel="stylesheet" href="../../styles.css" />
+  </head>
+  <body class="play-page">
+    <div class="scene-grid" aria-hidden="true"></div>
+    <header class="game-topbar">
+      <a class="back-link" href="../../#library">Back to library</a>
+      <h1 id="gameTitle">Loading</h1>
+      <a class="source-link" id="sourceLink" href="https://github.com/CoolDude2349/Offline-HTML-Games-Pack/tree/master/offline" rel="noopener">Source</a>
+    </header>
+    <main class="game-shell wide-shell">
+      <section class="game-panel embed-panel">
+        <div class="frame-loader" id="frameLoader">
+          <span class="loader-ring"></span>
+          <strong id="loaderTitle">Loading game</strong>
+          <small>Offline HTML game pack</small>
+        </div>
+        <iframe id="gameFrame" class="embed-frame" title="Offline game" loading="eager" allow="fullscreen; gamepad; pointer-lock" sandbox="allow-scripts allow-same-origin allow-pointer-lock allow-popups allow-forms"></iframe>
+      </section>
+    </main>
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const file = params.get("file") || "2048.html";
+      const safeFile = /^[a-zA-Z0-9._-]+\.html?$/.test(file) ? file : "2048.html";
+      const specialTitles = {
+        "1v1.lol.html": "1v1.lol",
+        "drivemad.htm": "Drive Mad",
+        "slope.html": "Slope",
+        "polytrack.html": "Polytrack",
+        "minesweeper.html": "Minesweeper",
+        "wordleunlimited.html": "Wordle Unlimited",
+        "spacebarclicker.html": "Spacebar Clicker",
+        "idlebreakout.html": "Idle Breakout",
+        "bloxorz.html": "Bloxorz",
+        "tunnelrush.html": "Tunnel Rush"
+      };
+      function titleFromFile(name) {
+        if (specialTitles[name]) return specialTitles[name];
+        return name
+          .replace(/\.(html|htm)$/i, "")
+          .replace(/[_-]+/g, " ")
+          .replace(/(\d+)$/g, " $1")
+          .replace(/\b\w/g, (letter) => letter.toUpperCase())
+          .replace(/\s+/g, " ")
+          .trim();
+      }
+      const title = titleFromFile(safeFile);
+      document.title = `${title} - Dexter Arcade`;
+      document.querySelector("#gameTitle").textContent = title;
+      document.querySelector("#loaderTitle").textContent = `Loading ${title}`;
+      document.querySelector("#sourceLink").href = `https://github.com/CoolDude2349/Offline-HTML-Games-Pack/blob/master/offline/${encodeURIComponent(safeFile)}`;
+      const frame = document.querySelector("#gameFrame");
+      frame.src = `https://cdn.jsdelivr.net/gh/CoolDude2349/Offline-HTML-Games-Pack@master/offline/${encodeURIComponent(safeFile)}`;
+      frame.addEventListener("load", () => document.querySelector("#frameLoader").classList.add("is-hidden"));
+    </script>
+  </body>
+</html>
