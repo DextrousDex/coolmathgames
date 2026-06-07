@@ -6,15 +6,21 @@
     <title>Hextris - Dexter Arcade</title>
     <link rel="stylesheet" href="../../styles.css" />
   </head>
-  <body>
+  <body class="play-page">
+    <div class="scene-grid" aria-hidden="true"></div>
     <header class="game-topbar">
       <a class="back-link" href="../../">Back to arcade</a>
       <h1>Hextris</h1>
       <a class="source-link" href="https://github.com/Hextris/hextris" rel="noopener">Source</a>
     </header>
-    <main class="game-shell">
+    <main class="game-shell wide-shell">
       <section class="game-panel embed-panel">
-        <iframe class="embed-frame" src="https://hextris.github.io/hextris/" title="Hextris"></iframe>
+        <div class="frame-loader">
+          <span class="loader-ring"></span>
+          <strong>Loading Hextris</strong>
+          <small>Fast-paced open-source arcade puzzle</small>
+        </div>
+        <iframe class="embed-frame" src="https://hextris.github.io/hextris/" title="Hextris" loading="eager" allow="fullscreen; gamepad" onload="this.previousElementSibling.classList.add('is-hidden')"></iframe>
       </section>
     </main>
   </body>
