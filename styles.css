@@ -115,6 +115,25 @@ main {
   background: var(--panel-strong);
 }
 
+.game-2048-art {
+  background:
+    linear-gradient(90deg, transparent 0 31%, rgba(255, 255, 255, 0.16) 32% 34%, transparent 35% 64%, rgba(255, 255, 255, 0.16) 65% 67%, transparent 68%),
+    linear-gradient(0deg, transparent 0 31%, rgba(255, 255, 255, 0.16) 32% 34%, transparent 35% 64%, rgba(255, 255, 255, 0.16) 65% 67%, transparent 68%),
+    linear-gradient(135deg, #f5b84b, #7a4fdd);
+}
+
+.hextris-art {
+  background:
+    conic-gradient(from 30deg, #ff6868 0 16%, #ffcf56 0 32%, #3ddc97 0 48%, #3b82f6 0 64%, #a78bfa 0 80%, #f472b6 0 100%);
+}
+
+.astray-art {
+  background:
+    linear-gradient(90deg, #e5e7eb 0 14%, transparent 14% 36%, #e5e7eb 36% 48%, transparent 48% 72%, #e5e7eb 72% 84%, transparent 84%),
+    linear-gradient(0deg, transparent 0 18%, #9ca3af 18% 30%, transparent 30% 54%, #9ca3af 54% 66%, transparent 66%),
+    linear-gradient(135deg, #0f172a, #155e75);
+}
+
 .snake-art {
   background:
     linear-gradient(90deg, transparent 47%, rgba(255, 255, 255, 0.08) 48% 52%, transparent 53%),
@@ -153,9 +172,17 @@ main {
   border-bottom: 1px solid var(--line);
 }
 
-.back-link {
+.back-link,
+.source-link {
   color: var(--muted);
   text-decoration: none;
+}
+
+.source-link:hover,
+.source-link:focus-visible,
+.back-link:hover,
+.back-link:focus-visible {
+  color: var(--text);
 }
 
 .game-panel {
@@ -165,6 +192,21 @@ main {
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--panel);
+}
+
+.embed-panel {
+  max-width: none;
+  padding: 0;
+  overflow: hidden;
+}
+
+.embed-frame {
+  display: block;
+  width: 100%;
+  height: min(78vh, 820px);
+  min-height: 560px;
+  border: 0;
+  background: #fff;
 }
 
 .score-row {
@@ -203,5 +245,10 @@ canvas {
   .game-topbar {
     align-items: stretch;
     flex-direction: column;
+  }
+
+  .embed-frame {
+    height: 72vh;
+    min-height: 460px;
   }
 }
