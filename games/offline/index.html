@@ -20,7 +20,7 @@
           <strong id="loaderTitle">Loading game</strong>
           <small id="loaderNote">Fetching offline HTML</small>
         </div>
-        <iframe id="gameFrame" class="embed-frame" title="Offline game" loading="eager" allow="fullscreen; gamepad; pointer-lock" sandbox="allow-scripts allow-same-origin allow-pointer-lock allow-popups allow-forms"></iframe>
+        <iframe id="gameFrame" class="embed-frame" title="Offline game" loading="eager" allow="fullscreen; gamepad; pointer-lock" sandbox="allow-scripts allow-pointer-lock allow-popups allow-forms"></iframe>
       </section>
     </main>
     <script>
@@ -78,8 +78,8 @@
           } else {
             html = `${baseTag}${html}`;
           }
-          frame.srcdoc = html;
           frame.addEventListener("load", () => loader.classList.add("is-hidden"), { once: true });
+          frame.srcdoc = html;
           window.setTimeout(() => loader.classList.add("is-hidden"), 1800);
         } catch (error) {
           note.innerHTML = `Could not load this file here. <a href="${rawUrl}" rel="noopener">Open raw file</a>`;
