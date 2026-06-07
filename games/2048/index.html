@@ -6,15 +6,21 @@
     <title>2048 - Dexter Arcade</title>
     <link rel="stylesheet" href="../../styles.css" />
   </head>
-  <body>
+  <body class="play-page">
+    <div class="scene-grid" aria-hidden="true"></div>
     <header class="game-topbar">
       <a class="back-link" href="../../">Back to arcade</a>
       <h1>2048</h1>
       <a class="source-link" href="https://github.com/gabrielecirulli/2048" rel="noopener">Source</a>
     </header>
-    <main class="game-shell">
+    <main class="game-shell wide-shell">
       <section class="game-panel embed-panel">
-        <iframe class="embed-frame" src="https://gabrielecirulli.github.io/2048/" title="2048"></iframe>
+        <div class="frame-loader">
+          <span class="loader-ring"></span>
+          <strong>Loading 2048</strong>
+          <small>Open-source puzzle classic</small>
+        </div>
+        <iframe class="embed-frame" src="https://gabrielecirulli.github.io/2048/" title="2048" loading="eager" allow="fullscreen; gamepad" onload="this.previousElementSibling.classList.add('is-hidden')"></iframe>
       </section>
     </main>
   </body>
