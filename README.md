@@ -1,6 +1,6 @@
 # Dexter Arcade
 
-A simple static browser-games site ready for Cloudflare Pages.
+A polished static browser-games site ready for Cloudflare Pages.
 
 ## Games
 
@@ -9,6 +9,10 @@ The site includes original starter games plus curated open-source browser games 
 - 2048 by Gabriele Cirulli: https://github.com/gabrielecirulli/2048
 - Hextris: https://github.com/Hextris/hextris
 - Astray by wwwtyro: https://github.com/wwwtyro/Astray
+
+## UI
+
+The arcade now includes a richer homepage, animated loading screen, featured game lane, filters, search, premium game cards, and polished embedded play pages.
 
 ## Local Preview
 
