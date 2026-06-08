@@ -29,68 +29,53 @@
     <main>
       <section class="hero" aria-labelledby="pageTitle">
         <div class="hero-copy">
-          <p class="eyebrow">Browser games</p>
+          <p class="eyebrow">Browser game</p>
           <h1 id="pageTitle">Dexter Arcade</h1>
-          <p class="hero-text">A huge instant-play catalog of offline HTML games, filtered away from the obvious branded stuff and wrapped in a proper arcade UI.</p>
+          <p class="hero-text">The arcade is trimmed down to one game for now: 1v1.lol, ready for instant play in a focused launcher.</p>
           <div class="hero-actions">
             <a class="primary-action" href="./games/offline/?file=1v1.lol.html">Play 1v1.lol</a>
-            <a class="secondary-action" href="#library">Browse games</a>
+            <a class="secondary-action" href="#library">View game</a>
           </div>
         </div>
         <div class="hero-stage" aria-hidden="true">
           <div class="cabinet">
             <div class="screen">
               <span class="scanline"></span>
-              <span class="screen-title">LOAD</span>
-              <span class="screen-score" id="heroCount">200+ games</span>
+              <span class="screen-title">1V1</span>
+              <span class="screen-score" id="heroCount">1 game</span>
             </div>
             <div class="controls"><span></span><span></span><span></span></div>
           </div>
         </div>
       </section>
 
-      <section class="featured" id="featured" aria-label="Featured games">
+      <section class="featured single-feature" id="featured" aria-label="Featured game">
         <a class="featured-game" href="./games/offline/?file=1v1.lol.html">
-          <span>Licensed pick</span>
+          <span>Featured pick</span>
           <strong>1v1.lol</strong>
           <small>Fast builder shooter</small>
-        </a>
-        <a class="featured-game" href="./games/offline/?file=drivemad.htm">
-          <span>Driving</span>
-          <strong>Drive Mad</strong>
-          <small>Physics chaos on wheels</small>
-        </a>
-        <a class="featured-game" href="./games/offline/?file=slope.html">
-          <span>3D rush</span>
-          <strong>Slope</strong>
-          <small>Speed, reflexes, survival</small>
         </a>
       </section>
 
       <section class="library-head" id="library" aria-label="Game library controls">
         <div>
           <p class="eyebrow">Library</p>
-          <h2>Pick a game</h2>
-          <p class="library-stat" id="libraryStat">Loading catalog...</p>
+          <h2>Play 1v1.lol</h2>
+          <p class="library-stat" id="libraryStat">1 game available</p>
         </div>
         <label class="search">
           <span>Search</span>
-          <input id="gameSearch" type="search" placeholder="Find a game" autocomplete="off" />
+          <input id="gameSearch" type="search" placeholder="Find 1v1.lol" autocomplete="off" />
         </label>
       </section>
 
       <section class="filter-row" aria-label="Game filters">
         <button class="filter-chip is-active" type="button" data-filter="all">All</button>
-        <button class="filter-chip" type="button" data-filter="arcade">Arcade</button>
-        <button class="filter-chip" type="button" data-filter="racing">Racing</button>
-        <button class="filter-chip" type="button" data-filter="sports">Sports</button>
-        <button class="filter-chip" type="button" data-filter="puzzle">Puzzle</button>
-        <button class="filter-chip" type="button" data-filter="3d">3D</button>
-        <button class="filter-chip" type="button" data-filter="idle">Idle</button>
+        <button class="filter-chip" type="button" data-filter="shooter">Shooter</button>
       </section>
 
       <section class="games-grid" id="gamesGrid" aria-label="Games">
-        <div class="loading-card">Loading games...</div>
+        <div class="loading-card">Loading game...</div>
       </section>
 
       <p class="empty-state" id="emptyState" hidden>No games found.</p>
