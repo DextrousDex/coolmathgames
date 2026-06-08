@@ -3,69 +3,34 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Loading - Dexter Arcade</title>
+    <title>1v1.lol - Dexter Arcade</title>
     <link rel="stylesheet" href="../../styles.css" />
   </head>
   <body class="play-page">
     <div class="scene-grid" aria-hidden="true"></div>
     <header class="game-topbar">
       <a class="back-link" href="../../#library">Back to library</a>
-      <h1 id="gameTitle">Loading</h1>
-      <a class="source-link" id="sourceLink" href="https://github.com/CoolDude2349/Offline-HTML-Games-Pack/tree/master/offline" rel="noopener">Source</a>
+      <h1 id="gameTitle">1v1.lol</h1>
+      <a class="source-link" id="sourceLink" href="https://github.com/CoolDude2349/Offline-HTML-Games-Pack/blob/master/offline/1v1.lol.html" rel="noopener">Source</a>
     </header>
     <main class="game-shell wide-shell">
       <section class="game-panel embed-panel">
         <div class="frame-loader" id="frameLoader">
           <span class="loader-ring"></span>
-          <strong id="loaderTitle">Loading game</strong>
+          <strong id="loaderTitle">Loading 1v1.lol</strong>
           <small id="loaderNote">Fetching offline HTML</small>
         </div>
-        <iframe id="gameFrame" class="embed-frame" title="Offline game" loading="eager" allow="fullscreen; gamepad; pointer-lock" sandbox="allow-scripts allow-pointer-lock allow-popups allow-forms"></iframe>
+        <iframe id="gameFrame" class="embed-frame" title="1v1.lol" loading="eager" allow="fullscreen; gamepad; pointer-lock" sandbox="allow-scripts allow-pointer-lock allow-popups allow-forms"></iframe>
       </section>
     </main>
     <script>
-      const params = new URLSearchParams(window.location.search);
-      const file = params.get("file") || "2048.html";
-      const safeFile = /^[a-zA-Z0-9._-]+\.html?$/.test(file) ? file : "2048.html";
-      const specialTitles = {
-        "1v1.lol.html": "1v1.lol",
-        "drivemad.htm": "Drive Mad",
-        "slope.html": "Slope",
-        "polytrack.html": "Polytrack",
-        "minesweeper.html": "Minesweeper",
-        "wordleunlimited.html": "Wordle Unlimited",
-        "spacebarclicker.html": "Spacebar Clicker",
-        "idlebreakout.html": "Idle Breakout",
-        "bloxorz.html": "Bloxorz",
-        "tunnelrush.html": "Tunnel Rush",
-        "deathrun3D.html": "Death Run 3D",
-        "1on1soccer.html": "1 on 1 Soccer",
-        "1on1tennis.html": "1 on 1 Tennis",
-        "12minibattles.html": "12 Mini Battles",
-        "10minutestilldawn.html": "10 Minutes Till Dawn",
-        "8ballclassic.html": "8 Ball Classic",
-        "2048cupcakes.html": "2048 Cupcakes"
-      };
-      function titleFromFile(name) {
-        if (specialTitles[name]) return specialTitles[name];
-        return name
-          .replace(/\.(html|htm)$/i, "")
-          .replace(/[_-]+/g, " ")
-          .replace(/(\d+)$/g, " $1")
-          .replace(/\b\w/g, (letter) => letter.toUpperCase())
-          .replace(/\s+/g, " ")
-          .trim();
-      }
-      const title = titleFromFile(safeFile);
-      const rawUrl = `https://raw.githubusercontent.com/CoolDude2349/Offline-HTML-Games-Pack/master/offline/${encodeURIComponent(safeFile)}`;
-      const sourceUrl = `https://github.com/CoolDude2349/Offline-HTML-Games-Pack/blob/master/offline/${encodeURIComponent(safeFile)}`;
-      document.title = `${title} - Dexter Arcade`;
-      document.querySelector("#gameTitle").textContent = title;
-      document.querySelector("#loaderTitle").textContent = `Loading ${title}`;
-      document.querySelector("#sourceLink").href = sourceUrl;
+      const gameFile = "1v1.lol.html";
+      const rawUrl = `https://raw.githubusercontent.com/CoolDude2349/Offline-HTML-Games-Pack/master/offline/${gameFile}`;
+      const sourceUrl = `https://github.com/CoolDude2349/Offline-HTML-Games-Pack/blob/master/offline/${gameFile}`;
       const frame = document.querySelector("#gameFrame");
       const loader = document.querySelector("#frameLoader");
       const note = document.querySelector("#loaderNote");
+      document.querySelector("#sourceLink").href = sourceUrl;
 
       async function loadGame() {
         try {
@@ -82,7 +47,7 @@
           frame.srcdoc = html;
           window.setTimeout(() => loader.classList.add("is-hidden"), 1800);
         } catch (error) {
-          note.innerHTML = `Could not load this file here. <a href="${rawUrl}" rel="noopener">Open raw file</a>`;
+          note.innerHTML = `Could not load 1v1.lol here. <a href="${rawUrl}" rel="noopener">Open raw file</a>`;
         }
       }
       loadGame();
