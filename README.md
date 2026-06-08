@@ -2,17 +2,17 @@
 
 A polished static browser-games site ready for Cloudflare Pages.
 
-## Games
+## Game
 
-The site includes original starter games plus curated open-source browser games embedded from their public project pages:
+The arcade is currently focused on one game:
 
-- 2048 by Gabriele Cirulli: https://github.com/gabrielecirulli/2048
-- Hextris: https://github.com/Hextris/hextris
-- Astray by wwwtyro: https://github.com/wwwtyro/Astray
+- 1v1.lol, embedded through the offline HTML player.
+
+The previous starter games and extra catalog entries have been removed for now so the site only promotes and launches 1v1.lol.
 
 ## UI
 
-The arcade now includes a richer homepage, animated loading screen, featured game lane, filters, search, premium game cards, and polished embedded play pages.
+The arcade includes an animated loading screen, focused featured-game lane, search, a single premium game card, and a polished embedded play page.
 
 ## Local Preview
 
