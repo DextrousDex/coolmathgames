@@ -235,6 +235,7 @@ h2 { font-size: clamp(2rem, 4vw, 4.3rem); line-height: 0.95; }
 .controls span:nth-child(3) { background: var(--accent); }
 
 .featured { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin: 0 0 44px; }
+.featured.single-feature { grid-template-columns: minmax(0, 520px); }
 .featured-game {
   position: relative;
   overflow: hidden;
@@ -291,6 +292,7 @@ h2 { font-size: clamp(2rem, 4vw, 4.3rem); line-height: 0.95; }
 .sports-art { background: linear-gradient(135deg, #56c7ff, #7c3aed); }
 .puzzle-art { background: linear-gradient(135deg, #ffd166, #9853ff 55%, #18c7a8); }
 .idle-art { background: linear-gradient(135deg, #a7f3d0, #334155); }
+.shooter-art { background: linear-gradient(135deg, #ff647c, #ffd166 42%, #33f0a0); }
 .\33 d-art { background: linear-gradient(135deg, #0f172a, #155e75 58%, #64748b); }
 .game-badge { position: absolute; top: 24px; left: 24px; z-index: 2; border: 1px solid rgba(255,255,255,.24); border-radius: 999px; background: rgba(8,10,15,.74); color: var(--text); font-size: .72rem; font-weight: 900; padding: 6px 9px; text-transform: uppercase; }
 .game-badge.hot { color: #ffe5ea; background: rgba(255,100,124,.3); }
